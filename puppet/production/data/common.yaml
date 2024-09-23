@@ -1,0 +1,3 @@
+profiles::nginx::package_ensure: 'present'
+profiles::nginx::service_enable: true
+profiles::nginx::service_ensure: 'running'
