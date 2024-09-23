@@ -45,9 +45,9 @@ module "autoscaling_group" {
   source = "terraform-aws-modules/autoscaling/aws"
 
   name                = var.name
-  min_size            = 1
+  min_size            = 2
   max_size            = 5
-  desired_capacity    = 1
+  desired_capacity    = 2
   health_check_type   = "EC2"
   vpc_zone_identifier = var.private_subnets
 
