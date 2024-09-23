@@ -59,7 +59,6 @@ module "autoscaling_group" {
   image_id      = data.aws_ami.amazon_linux.id
   instance_type = "t3.micro"
   user_data     = base64encode(local.user_data)
-  key_name      = "defaultKey"
   traffic_source_attachments = {
     ex-alb = {
       traffic_source_identifier = module.alb.target_groups["ex-instance"].arn
@@ -80,7 +79,7 @@ module "asg_sg" {
   version = "~> 5.0"
 
   name        = var.name
-  description = "A security group"
+  description = "Autoscale security group for ${var.name}"
   vpc_id      = var.vpc_id
 
   computed_ingress_with_source_security_group_id = [
