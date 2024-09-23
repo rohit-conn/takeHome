@@ -8,7 +8,7 @@ locals {
   azs      = slice(data.aws_availability_zones.available.names, 0, 3)
 
   nginx_tags = {
-    Role      = "nginx"
+    Role = "nginx"
   }
 
   app_tags = {
